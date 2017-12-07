@@ -1,6 +1,6 @@
 .build/
 *.sw*
 .DS_Store
-App-lsiommu-*/
-App-lsiommu-*.tar.gz
+App-lsnic-*/
+App-lsnic-*.tar.gz
 
