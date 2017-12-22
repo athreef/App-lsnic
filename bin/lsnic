@@ -2,9 +2,8 @@
 
 use strict;
 use warnings;
-use Alien::lshw;
 use Env '@PATH';
-unshift @PATH, Alien::lshw->bin_dir;
+push @PATH, qw(/sbin /usr/sbin /usr/local/sbin);
 use Getopt::Std;
 getopts 'n', \our %opts;
 
