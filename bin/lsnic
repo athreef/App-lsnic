@@ -11,7 +11,7 @@ getopts 'ev', \our %opts;
 
 sub run { print "\$ $_[0]\n" if $opts{e}; `$_[0]` }
 
-if ($opts{v}) { print "App::lsnic version $VERSION\n"; exit 0 }
+if ($opts{v}) { print "App::lsnic v$VERSION\n"; exit 0 }
 die "ERROR: lsnic must be run as super user.\n" if $<;
 
 my ($i, @hw) = (-1);
