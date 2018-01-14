@@ -1,14 +1,17 @@
 #!perl
 
+# VERSION
+
 use strict;
 use warnings;
 use Env '@PATH';
 push @PATH, qw(/sbin /usr/sbin /usr/local/sbin);
 use Getopt::Std;
-getopts 'v', \our %opts;
+getopts 'ev', \our %opts;
 
-sub run { print "\$ $_[0]\n" if $opts{v}; `$_[0]` }
+sub run { print "\$ $_[0]\n" if $opts{e}; `$_[0]` }
 
+if ($opts{v}) { print "App::lsnic version $VERSION\n"; exit 0 }
 die "ERROR: lsnic must be run as super user.\n" if $<;
 
 my ($i, @hw) = (-1);
@@ -77,10 +80,6 @@ for my $nic (@nics) {
 
 lsnic - Display table of network controllers
 
-=head1 VERSION
-
-version 0.003
-
 =head1 SYNOPSIS
 
     # lsnic
@@ -92,7 +91,7 @@ version 0.003
 
 =head1 INSTALLATION
 
-    # cpan App::lsionic
+    # cpan App::lsnic
 
 =head1 DESCRIPTION
 
