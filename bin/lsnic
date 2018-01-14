@@ -1,9 +1,9 @@
 #!perl
 
-# VERSION
-
 use strict;
 use warnings;
+# VERSION
+
 use Env '@PATH';
 push @PATH, qw(/sbin /usr/sbin /usr/local/sbin);
 use Getopt::Std;
